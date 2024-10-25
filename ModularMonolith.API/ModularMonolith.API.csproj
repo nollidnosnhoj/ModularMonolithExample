@@ -19,8 +19,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Consults.API\Consults.API.csproj" />
-      <ProjectReference Include="..\Notes.API\Notes.API.csproj" />
+      <ProjectReference Include="..\BuildingBlocks\BuildingBlocks.csproj" />
+      <ProjectReference Include="..\Modules\Consults\Consults.API\Consults.API.csproj" />
+      <ProjectReference Include="..\Modules\Consults\Consults.Infrastructure\Consults.Infrastructure.csproj" />
+      <ProjectReference Include="..\Modules\Notes\Notes.API\Notes.API.csproj" />
+      <ProjectReference Include="..\Modules\Notes\Notes.Infrastructure\Notes.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

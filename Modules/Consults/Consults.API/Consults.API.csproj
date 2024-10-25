@@ -7,10 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BuildingBlocks\BuildingBlocks.csproj" />
+      <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks.csproj" />
       <ProjectReference Include="..\Consults.Domain\Consults.Domain.csproj" />
       <ProjectReference Include="..\Consults.Infrastructure\Consults.Infrastructure.csproj" />
-      <ProjectReference Include="..\Notes.Shared\Notes.Shared.csproj" />
+      <ProjectReference Include="..\..\Notes\Notes.Shared\Notes.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>
