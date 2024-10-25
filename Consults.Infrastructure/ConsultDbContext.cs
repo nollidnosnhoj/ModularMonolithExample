@@ -1,9 +1,9 @@
-using Consultation.Domain;
+using Consults.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Consultation.Infrastructure;
+namespace Consults.Infrastructure;
 
 public class ConsultDbContext : DbContext
 {

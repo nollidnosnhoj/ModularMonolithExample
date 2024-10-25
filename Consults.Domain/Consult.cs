@@ -1,8 +1,8 @@
-using Consultation.Domain.Shared;
+using Consults.Domain.Shared;
 
-namespace Consultation.API.Dtos;
+namespace Consults.Domain;
 
-public class ConsultDto
+public class Consult
 {
     public required Guid Id { get; init; }
     public required string PatientName { get; init; }
@@ -10,5 +10,5 @@ public class ConsultDto
     public required Salutation PatientSalutation { get; init; }
     public required DateTimeOffset? CallDateTime { get; init; }
     public required DateTimeOffset? StartDateTime { get; init; }
-    public required ConsultStatus Status { get; init; }
+    public ConsultStatus Status { get; init; } = ConsultStatus.Draft;
 }

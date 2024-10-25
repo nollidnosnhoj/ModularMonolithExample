@@ -1,12 +1,12 @@
-using Consultation.API.Dtos;
-using Consultation.Domain;
-using Consultation.Domain.Shared;
-using Consultation.Infrastructure;
+using Consults.Domain;
+using Consults.Domain.Shared;
+using Consults.Infrastructure;
+using Consults.API.Dtos;
 using MediatR;
 using Notes.Shared.Commands;
 using Notes.Shared.Dtos;
 
-namespace Consultation.API.Commands;
+namespace Consults.API.Commands;
 
 public class AddConsultCommand : IRequest<ConsultDto>
 {

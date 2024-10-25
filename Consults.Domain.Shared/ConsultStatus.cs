@@ -1,4 +1,4 @@
-namespace Consultation.Domain.Shared;
+namespace Consults.Domain.Shared;
 
 public enum ConsultStatus
 {

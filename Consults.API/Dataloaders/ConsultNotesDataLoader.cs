@@ -1,9 +1,9 @@
-using Consultation.Domain;
+using Consults.Domain;
 using GreenDonut;
 using Notes.Shared.Dtos;
 using Notes.Shared.Services;
 
-namespace Consultation.API.Dataloaders;
+namespace Consults.API.Dataloaders;
 
 public class ConsultNotesDataLoader : BatchDataLoader<Guid, NoteDto>
 {

@@ -1,12 +1,12 @@
-using Consultation.API.Dtos;
-using Consultation.Domain;
-using Consultation.Infrastructure;
+using Consults.Domain;
+using Consults.Infrastructure;
+using Consults.API.Dtos;
 using HotChocolate;
 using Microsoft.EntityFrameworkCore;
 using Notes.Shared.Dtos;
 using Notes.Shared.Services;
 
-namespace Consultation.API.Queries;
+namespace Consults.API.Queries;
 
 public class ConsultQueries
 {

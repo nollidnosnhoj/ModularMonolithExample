@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularMonolith.API", "ModularMonolith.API\ModularMonolith.API.csproj", "{3DF4982A-5FE9-463C-BB0A-A2437CDC945F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultation.API", "Consultation.API\Consultation.API.csproj", "{45AFCA8E-B79F-4545-9B50-7D85FB2406BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consults.API", "Consults.API\Consults.API.csproj", "{45AFCA8E-B79F-4545-9B50-7D85FB2406BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.API", "Notes.API\Notes.API.csproj", "{E13D80CD-1DC4-43E4-A22E-0C938015D204}"
 EndProject
@@ -12,9 +12,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Domain", "Notes.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Infrastructure", "Notes.Infrastructure\Notes.Infrastructure.csproj", "{0FD3B24C-01AB-4422-B662-9EEE2ACFC941}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultation.Domain", "Consultation.Domain\Consultation.Domain.csproj", "{FE42C9CD-A3F7-464C-B7C3-5ADFCA0E8C9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consults.Domain", "Consults.Domain\Consults.Domain.csproj", "{FE42C9CD-A3F7-464C-B7C3-5ADFCA0E8C9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultation.Infrastructure", "Consultation.Infrastructure\Consultation.Infrastructure.csproj", "{73E60C6F-5E3C-4002-B844-B7E0A549FBB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consults.Infrastructure", "Consults.Infrastructure\Consults.Infrastructure.csproj", "{73E60C6F-5E3C-4002-B844-B7E0A549FBB9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Domain.Shared", "Notes.Domain.Shared\Notes.Domain.Shared.csproj", "{CFA50857-DA7B-40D9-8085-EB50783599E5}"
 EndProject
@@ -24,11 +24,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{2763
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{1593A2D2-F27E-41BB-B1D2-A8F3294D0745}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consultations", "Consultations", "{01EDF09D-16CD-43C3-BCCD-B4F7D5712B97}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consults", "Consults", "{01EDF09D-16CD-43C3-BCCD-B4F7D5712B97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{740F8E4C-437A-45C8-B57B-4187028B1A0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultation.Domain.Shared", "Consultation.Domain.Shared\Consultation.Domain.Shared.csproj", "{C6A27FF1-85EC-4E94-9DF9-9927BC65BF3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consults.Domain.Shared", "Consults.Domain.Shared\Consults.Domain.Shared.csproj", "{C6A27FF1-85EC-4E94-9DF9-9927BC65BF3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,10 +1,10 @@
-using Consultation.API.Commands;
-using Consultation.API.Dtos;
+using Consults.API.Commands;
+using Consults.API.Dtos;
 using HotChocolate;
 using HotChocolate.Types;
 using MediatR;
 
-namespace Consultation.API;
+namespace Consults.API;
 
 [ExtendObjectType(OperationTypeNames.Mutation)]
 public class ConsultMutation

@@ -1,15 +1,15 @@
 using BuildingBlocks;
-using Consultation.API.Queries;
-using Consultation.API.Types;
-using Consultation.Infrastructure;
+using Consults.Infrastructure;
+using Consults.API.Queries;
+using Consults.API.Types;
 using HotChocolate.Execution.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Consultation.API;
+namespace Consults.API;
 
-public class ConsultationModule : IModuleInstaller
+public class Module : IModuleInstaller
 {
     public void Install(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
     {

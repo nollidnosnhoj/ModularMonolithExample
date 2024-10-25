@@ -1,9 +1,9 @@
-using Consultation.API.Dtos;
-using Consultation.API.Queries;
+using Consults.API.Dtos;
+using Consults.API.Queries;
 using HotChocolate;
 using HotChocolate.Types;
 
-namespace Consultation.API;
+namespace Consults.API;
 
 [ExtendObjectType(OperationTypeNames.Query)]
 public class ConsultQuery

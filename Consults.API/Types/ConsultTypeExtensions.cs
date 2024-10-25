@@ -1,10 +1,10 @@
-using Consultation.API.Dataloaders;
-using Consultation.API.Dtos;
+using Consults.API.Dataloaders;
+using Consults.API.Dtos;
 using HotChocolate;
 using HotChocolate.Types;
 using Notes.Shared.Dtos;
 
-namespace Consultation.API.Types;
+namespace Consults.API.Types;
 
 [ExtendObjectType<ConsultDto>]
 public class ConsultTypeExtensions

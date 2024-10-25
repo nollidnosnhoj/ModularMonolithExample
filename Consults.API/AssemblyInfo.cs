@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Consultation.API;
+namespace Consults.API;
 
 public static class AssemblyInfo
 {
