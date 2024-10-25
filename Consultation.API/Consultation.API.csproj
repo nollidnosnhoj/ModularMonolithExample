@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BuildingBlocks\BuildingBlocks.csproj" />
+      <ProjectReference Include="..\Consultation.Domain\Consultation.Domain.csproj" />
+      <ProjectReference Include="..\Consultation.Infrastructure\Consultation.Infrastructure.csproj" />
+      <ProjectReference Include="..\Notes.Shared\Notes.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HotChocolate" Version="14.0.0" />
+      <PackageReference Include="MediatR" Version="12.4.1" />
+    </ItemGroup>
+
+</Project>
