@@ -23,7 +23,13 @@ public class AddNoteCommandHandler : IRequestHandler<AddNoteCommand, NoteDto>
             Content = request.Content,
             Type = request.Type,
             OwnerType = request.OwnerType,
-            OwnerId = request.OwnerId
+            OwnerId = request.OwnerId,
+            Data = request.Data.Select(data => new NoteData
+            {
+                Id = Guid.NewGuid(),
+                Key = data.Key,
+                Value = data.Value
+            }).ToList()
         };
         
         _dbContext.Notes.Add(note);

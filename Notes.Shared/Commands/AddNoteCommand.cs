@@ -10,4 +10,5 @@ public class AddNoteCommand : IRequest<NoteDto>
     public required NoteType Type { get; init; }
     public required string OwnerType { get; init; }
     public required Guid OwnerId { get; init; }
+    public List<NoteDataInput> Data { get; init; } = [];
 }

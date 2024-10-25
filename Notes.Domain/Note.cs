@@ -9,4 +9,6 @@ public class Note
     public required NoteType Type { get; init; }
     public required string OwnerType { get; init; }
     public required Guid OwnerId { get; init; }
+    
+    public ICollection<NoteData> Data { get; init; } = new List<NoteData>();
 }

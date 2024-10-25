@@ -10,8 +10,4 @@ public interface INoteService
         string? ownerType = null,
         NoteType? type = null,
         CancellationToken cancellationToken = default);
-    Task<List<NoteDto>> GetNotesByOwnerTypeAsync(
-        string ownerType,
-        NoteType? type = null,
-        CancellationToken cancellationToken = default);
 }

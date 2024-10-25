@@ -41,29 +41,10 @@ public class NoteService : INoteService
                 Content = note.Content,
                 Type = note.Type,
                 OwnerType = note.OwnerType,
-                OwnerId = note.OwnerId
-            })
-            .ToListAsync(cancellationToken);
-    }
-
-    public async Task<List<NoteDto>> GetNotesByOwnerTypeAsync(string ownerType, NoteType? type = null, CancellationToken cancellationToken = default)
-    {
-        var queryable = _dbContext.Notes.AsQueryable()
-            .Where(note => note.OwnerType == ownerType);
-        
-        if (type is not null)
-        {
-            queryable = queryable.Where(note => note.Type == type);
-        }
-        
-        return await queryable
-            .Select(note => new NoteDto
-            {
-                Id = note.Id,
-                Content = note.Content,
-                Type = note.Type,
-                OwnerType = note.OwnerType,
-                OwnerId = note.OwnerId
+                OwnerId = note.OwnerId,
+                Data = note.Data
+                    .Select(data => new NoteDataDto(data.Key, data.Value))
+                    .ToList()
             })
             .ToListAsync(cancellationToken);
     }

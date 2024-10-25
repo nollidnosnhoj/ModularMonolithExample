@@ -56,7 +56,8 @@ public class AddConsultCommandHandler : IRequestHandler<AddConsultCommand, Consu
                     Content = request.Note.Content,
                     Type = request.Note.Type,
                     OwnerType = nameof(Consult),
-                    OwnerId = consult.Id
+                    OwnerId = consult.Id,
+                    Data = request.Note.Data ?? []
                 };
 
                 await _sender.Send(addNoteCommand, cancellationToken);

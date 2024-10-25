@@ -9,4 +9,5 @@ public class NoteDto
     public required NoteType Type { get; init; }
     public required string OwnerType { get; init; }
     public required Guid OwnerId { get; init; }
+    public List<NoteDataDto> Data { get; init; } = [];
 }
