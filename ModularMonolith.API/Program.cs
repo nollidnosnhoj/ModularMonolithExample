@@ -10,7 +10,8 @@ var hcBuilder = builder.Services
     .AddMutationType();
 var moduleInstallers = ModuleInstallerExtensions.GetModuleInstallers(
     Notes.API.AssemblyInfo.Assembly,
-    Consults.API.AssemblyInfo.Assembly).ToList();
+    Consults.API.AssemblyInfo.Assembly
+).ToList();
 foreach (var moduleInstaller in moduleInstallers)
 {
     moduleInstaller.Install(builder.Services, builder.Configuration, builder.Environment);

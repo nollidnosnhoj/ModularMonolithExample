@@ -1,0 +1,43 @@
+# ModuleMonolith.API
+
+This is the startup project. This is the project you will run to start the modular monolith.
+
+Within Program.cs, this is where we register all the modules.
+
+This project can reference any project (regardless if it's shared or not) since the purpose of this project is to
+register all the modules.
+
+For instance, we are referencing the Infrastructure project of each module so that we can migrate the database
+when the monolith starts.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HotChocolate.AspNetCore" Version="15.1.12" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.5">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BuildingBlocks\BuildingBlocks.csproj" />
+      <ProjectReference Include="..\Modules\Consults\Consults.API\Consults.API.csproj" />
+      <ProjectReference Include="..\Modules\Consults\Consults.Infrastructure\Consults.Infrastructure.csproj" />
+      <ProjectReference Include="..\Modules\Notes\Notes.API\Notes.API.csproj" />
+      <ProjectReference Include="..\Modules\Notes\Notes.Infrastructure\Notes.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>
+```
