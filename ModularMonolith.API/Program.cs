@@ -8,10 +8,7 @@ var hcBuilder = builder.Services
     .AddGraphQLServer()
     .AddQueryType()
     .AddMutationType();
-var moduleInstallers = ModuleInstallerExtensions.GetModuleInstallers(
-    Notes.API.AssemblyInfo.Assembly,
-    Consults.API.AssemblyInfo.Assembly
-).ToList();
+var moduleInstallers = ModuleInstallerExtensions.GetModuleInstallers().ToList();
 foreach (var moduleInstaller in moduleInstallers)
 {
     moduleInstaller.Install(builder.Services, builder.Configuration, builder.Environment);
