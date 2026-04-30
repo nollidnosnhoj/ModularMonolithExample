@@ -1,3 +1,4 @@
+using BuildingBlocks.Auditing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,6 +50,9 @@ public static class NotesDbContextExtensions
     {
         services.AddDbContext<NotesDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("Notes")));
+        services.AddModuleAuditLogDbContext<NotesAuditLogDbContext>(
+            configuration.GetConnectionString("Notes")!,
+            "__EFMigrationsHistory_NotesAuditLog");
         
         return services;
     }

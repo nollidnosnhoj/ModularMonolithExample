@@ -1,3 +1,4 @@
+using BuildingBlocks.Auditing;
 using Consults.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,6 +36,9 @@ public static class ConsultDbContextExtensions
     {
         services.AddDbContext<ConsultDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("Consults")));
+        services.AddModuleAuditLogDbContext<ConsultsAuditLogDbContext>(
+            configuration.GetConnectionString("Consults")!,
+            "__EFMigrationsHistory_ConsultsAuditLog");
         
         return services;
     }

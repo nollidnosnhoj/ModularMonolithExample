@@ -24,7 +24,9 @@ app.MapGraphQL();
 if (app.Environment.IsDevelopment())
 {
     await app.MigrateDatabaseAsync<NotesDbContext>();
+    await app.MigrateDatabaseAsync<NotesAuditLogDbContext>();
     await app.MigrateDatabaseAsync<ConsultDbContext>();
+    await app.MigrateDatabaseAsync<ConsultsAuditLogDbContext>();
 }
 
 app.Run();

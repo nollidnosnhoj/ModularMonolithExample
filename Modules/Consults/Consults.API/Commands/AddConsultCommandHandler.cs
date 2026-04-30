@@ -1,10 +1,14 @@
+using BuildingBlocks.Auditing;
 using Consults.Domain;
 using Consults.Domain.Shared;
 using Consults.Infrastructure;
 using Consults.API.Dtos;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Notes.Shared.Commands;
 using Notes.Shared.Dtos;
+using System.Text.Json;
 
 namespace Consults.API.Commands;
 
@@ -22,10 +26,15 @@ public class AddConsultCommandHandler : IRequestHandler<AddConsultCommand, Consu
 {
     private readonly ISender _sender;
     private readonly ConsultDbContext _dbContext;
+    private readonly ConsultsAuditLogDbContext _auditLogDbContext;
 
-    public AddConsultCommandHandler(ConsultDbContext dbContext, ISender sender)
+    public AddConsultCommandHandler(
+        ConsultDbContext dbContext,
+        ConsultsAuditLogDbContext auditLogDbContext,
+        ISender sender)
     {
         _dbContext = dbContext;
+        _auditLogDbContext = auditLogDbContext;
         _sender = sender;
     }
 
@@ -48,6 +57,19 @@ public class AddConsultCommandHandler : IRequestHandler<AddConsultCommand, Consu
 
             _dbContext.Consults.Add(consult);
             await _dbContext.SaveChangesAsync(cancellationToken);
+
+            _auditLogDbContext.Database.SetDbConnection(_dbContext.Database.GetDbConnection());
+            await _auditLogDbContext.Database.UseTransactionAsync(transaction.GetDbTransaction(), cancellationToken);
+            _auditLogDbContext.AuditLogEntries.Add(new AuditLogEntry
+            {
+                Id = Guid.NewGuid(),
+                OccurredAt = DateTimeOffset.UtcNow,
+                Action = "Created",
+                EntityType = nameof(Consult),
+                EntityId = consult.Id,
+                Payload = JsonSerializer.Serialize(request)
+            });
+            await _auditLogDbContext.SaveChangesAsync(cancellationToken);
 
             if (request.Note is not null)
             {
