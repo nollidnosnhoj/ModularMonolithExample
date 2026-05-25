@@ -35,6 +35,7 @@ public class NoteService : INoteService
         }
         
         return await queryable
+            .TagWith("GetNotesByOwnerIdsAsync")
             .Select(note => new NoteDto
             {
                 Id = note.Id,

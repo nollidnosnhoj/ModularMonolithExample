@@ -13,10 +13,6 @@ public class NotesModule : IModuleInstaller
 {
     public void Install(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
     {
-        services.AddMediatR(config =>
-        {
-            config.RegisterServicesFromAssembly(AssemblyInfo.Assembly);
-        });
         services.AddNotesDbContext(configuration);
         services.AddScoped<INoteService, NoteService>();
     }

@@ -13,10 +13,6 @@ public class Module : IModuleInstaller
 {
     public void Install(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
     {
-        services.AddMediatR(config =>
-        {
-            config.RegisterServicesFromAssembly(AssemblyInfo.Assembly);
-        });
         services.AddConsultDbContext(configuration);
         services.AddScoped<ConsultQueries>();
     }

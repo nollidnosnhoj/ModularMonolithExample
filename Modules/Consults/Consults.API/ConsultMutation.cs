@@ -2,7 +2,7 @@ using Consults.API.Commands;
 using Consults.API.Dtos;
 using HotChocolate;
 using HotChocolate.Types;
-using MediatR;
+using Mediator;
 
 namespace Consults.API;
 

@@ -3,16 +3,20 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Consults.Infrastructure.Migrations.ConsultsAuditLogDb
+namespace BuildingBlocks.Auditing.Migrations
 {
     /// <inheritdoc />
-    public partial class AddAuditLog : Migration
+    public partial class AddCentralAuditLog : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "auditLog");
+
             migrationBuilder.CreateTable(
                 name: "AuditLogEntries",
+                schema: "auditLog",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -32,7 +36,8 @@ namespace Consults.Infrastructure.Migrations.ConsultsAuditLogDb
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AuditLogEntries");
+                name: "AuditLogEntries",
+                schema: "auditLog");
         }
     }
 }

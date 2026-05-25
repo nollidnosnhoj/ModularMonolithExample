@@ -20,6 +20,7 @@ public class ConsultQueries
     public async Task<List<ConsultDto>> GetConsultsAsync(CancellationToken cancellationToken = default)
     {
         return await _dbContext.Consults
+            .TagWith("GetConsultsQuery")
             .Select(consult => new ConsultDto
             {
                 Id = consult.Id,

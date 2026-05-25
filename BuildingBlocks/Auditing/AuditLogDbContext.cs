@@ -2,9 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BuildingBlocks.Auditing;
 
-public abstract class AuditLogDbContext : DbContext
+public class AuditLogDbContext : DbContext
 {
-    protected AuditLogDbContext(DbContextOptions options) : base(options)
+    public AuditLogDbContext(DbContextOptions<AuditLogDbContext> options) : base(options)
     {
     }
 
@@ -14,7 +14,7 @@ public abstract class AuditLogDbContext : DbContext
     {
         modelBuilder.Entity<AuditLogEntry>(entity =>
         {
-            entity.ToTable("AuditLogEntries");
+            entity.ToTable("AuditLogEntries", "auditLog");
             entity.HasKey(auditLogEntry => auditLogEntry.Id);
             entity.Property(auditLogEntry => auditLogEntry.Id).ValueGeneratedNever();
             entity.Property(auditLogEntry => auditLogEntry.OccurredAt).IsRequired();

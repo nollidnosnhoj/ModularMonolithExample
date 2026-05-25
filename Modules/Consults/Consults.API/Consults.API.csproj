@@ -14,8 +14,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="HotChocolate" Version="16.0.3" />
-      <PackageReference Include="MediatR" Version="14.1.0" />
+      <PackageReference Include="HotChocolate" Version="16.0.9" />
+      <PackageReference Include="Mediator.Abstractions" Version="3.0.2" />
     </ItemGroup>
 
 </Project>

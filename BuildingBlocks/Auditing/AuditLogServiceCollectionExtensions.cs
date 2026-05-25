@@ -5,16 +5,14 @@ namespace BuildingBlocks.Auditing;
 
 public static class AuditLogServiceCollectionExtensions
 {
-    public static IServiceCollection AddModuleAuditLogDbContext<TAuditLogDbContext>(
+    public static IServiceCollection AddAuditLogDbContext(
         this IServiceCollection services,
-        string connectionString,
-        string migrationsHistoryTableName)
-        where TAuditLogDbContext : AuditLogDbContext
+        string connectionString)
     {
-        services.AddDbContext<TAuditLogDbContext>(options =>
+        services.AddDbContext<AuditLogDbContext>(options =>
             options.UseNpgsql(
                 connectionString,
-                npgsqlOptions => npgsqlOptions.MigrationsHistoryTable(migrationsHistoryTableName)));
+                npgsqlOptions => npgsqlOptions.MigrationsHistoryTable("__EFMigrationsHistory_AuditLog", "auditLog")));
 
         return services;
     }

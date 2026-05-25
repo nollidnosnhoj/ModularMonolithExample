@@ -1,4 +1,4 @@
-using MediatR;
+using Mediator;
 using Notes.Domain.Shared;
 using Notes.Shared.Dtos;
 
